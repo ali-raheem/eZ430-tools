@@ -1,0 +1,13 @@
+eZ430 Tools
+
+A collection of scripts for interacting with the eZ430 or using the eZ430 to interact with other devices.
+
+
+
+Current scripts:
+music_control.py - uses gestures to control music http://www.youtube.com/watch?v=u65TkcRRFS4
+
+
+
+
+As with all my projects all contributions openly welcome.
