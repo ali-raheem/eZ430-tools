@@ -8,7 +8,7 @@ Current scripts:
 music_control.py - uses gestures to control music http://www.youtube.com/watch?v=u65TkcRRFS4
 ppt.py - uses xdotool to supply button presses from eZ430 as clicks etc.
 eZ430.py - provides a class ppt.py uses this class I will be converting music_control if I can be bothered.
-
+mouse - control mouse in ACC mode. Doesn't work yet really uses xdotool
 
 
 As with all my projects all contributions openly welcome.
