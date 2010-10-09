@@ -1,12 +1,13 @@
 eZ430 Tools
 
 A collection of scripts for interacting with the eZ430 or using the eZ430 to interact with other devices.
-
+Including a class to simplify use of the eZ430.
 
 
 Current scripts:
 music_control.py - uses gestures to control music http://www.youtube.com/watch?v=u65TkcRRFS4
-
+ppt.py - uses xdotool to supply button presses from eZ430 as clicks etc.
+eZ430.py - provides a class ppt.py uses this class I will be converting music_control if I can be bothered.
 
 
 
