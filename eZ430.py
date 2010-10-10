@@ -4,7 +4,7 @@ import serial
 class sensors():
         def __init__(self, dev="/dev/ttyACM0",deb=50):
                 self.dev=dev
-                self.conn = serial.Serial(dev, 115200,timeout=1)
+                self.conn = serial.Serial(self.dev, 115200,timeout=1)
                 self.write("\xFF\x07\x03")
                 self.deb=deb
         def write(self,msg):

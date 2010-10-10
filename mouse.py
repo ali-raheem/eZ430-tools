@@ -9,15 +9,11 @@ if(os.system("xdotool --version")!=0):
 	os.exit(1)
 while 1:
 	data = watch.read(7)
-	print "X",ord(data[0]),"Y",ord(data[1]),"Z",ord(data[2])
-	y=ord(data[1])
-	x=ord(data[2])
+	y=ord(data[0])
+	x=ord(data[1])
 	if(x*y != 0):
-		for i in data:
-			print ord(i)
 		x-=128
 		y-=128
-		y=-y
 		x/=50
 		y/=50
 		os.system('xdotool mousemove_relative -- %s %s'%(x,y))
