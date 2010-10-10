@@ -1,14 +1,12 @@
 #!/usr/bin/env python
-import serial
-import array
+import eZ430
 import dbus
 #Rhythmbox dbus
 session_bus = dbus.SessionBus()
 proxy_obj = session_bus.get_object('org.gnome.Rhythmbox', '/org/gnome/Rhythmbox/Player')
 player = dbus.Interface(proxy_obj, 'org.gnome.Rhythmbox.Player')
 #Wireless link init
-usb = serial.Serial('/dev/ttyACM1',115200,timeout=1)
-usb.write(array.array('B', [0xFF, 0x07, 0x03]).tostring())
+watch = eZ430.sensors()
 
 #Variables
 #link=0
@@ -18,9 +16,6 @@ s=0
 p=0
 playing=0
 #val=[0,0,0,0]
-
-def getData():
-    usb.write(array.array('B', [0xFF, 0x08, 0x07, 0x00, 0x00, 0x00, 0x00]).tostring())
 
 #Gestures
 def raised():
@@ -50,8 +45,7 @@ def clear():
 	p=0
 	r=0
 while 1:
-	getData()
-	data = usb.read(7)
+	data = watch.read()
    	acc={'x':ord(data[0]), 'y':ord(data[1]), 'z':ord(data[2])}
 	if acc['x']+acc['y']+acc['z']!=0:
 #		print "x: %s\ty:%s\tz:%s\tpd:%s"%(acc['x'],acc['y'],acc['z'],pd)
@@ -91,4 +85,3 @@ while 1:
 	if s>500:
 		s=0
 #		supanate()
-usb.close()
