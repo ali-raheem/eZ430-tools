@@ -5,7 +5,7 @@ session_bus = dbus.SessionBus()
 proxy_obj = session_bus.get_object('org.gnome.Rhythmbox', '/org/gnome/Rhythmbox/Player')
 player = dbus.Interface(proxy_obj, 'org.gnome.Rhythmbox.Player')
 #Wireless link init
-watch = eZ430.sensors()
+watch = eZ430.watch()
 
 #Variables
 #link=0

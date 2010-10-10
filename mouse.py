@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import os, eZ430
 
-watch = eZ430.sensors()
+watch = eZ430.watch()
 print "Opening eZ430 on",watch.dev
 if(os.system("xdotool --version")!=0):
 	print "You need xdotool."
