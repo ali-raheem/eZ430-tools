@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-import eZ430
-import dbus
+import eZ430, dbus
 #Rhythmbox dbus
 session_bus = dbus.SessionBus()
 proxy_obj = session_bus.get_object('org.gnome.Rhythmbox', '/org/gnome/Rhythmbox/Player')

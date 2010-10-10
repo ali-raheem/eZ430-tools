@@ -1,10 +1,9 @@
-#!/usr/bin/python
-import os
-import eZ430
+#!/usr/bin/env python
+import os, eZ430
 
 verbose = 1
 watch = eZ430.sensors()
-print "Opening eZ430 on",watch.dev
+if verbose: print "Opening eZ430 on",watch.dev
 if(os.system("xdotool --version")!=0):
 	print "You need xdotool."
 	os.exit(1)

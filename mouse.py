@@ -1,6 +1,5 @@
-#!/usr/bin/python
-import os
-import eZ430
+#!/usr/bin/env python
+import os, eZ430
 
 watch = eZ430.sensors()
 print "Opening eZ430 on",watch.dev
