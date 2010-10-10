@@ -9,7 +9,7 @@ class sensors():
                 self.deb=deb
         def write(self,msg):
                 self.conn.write(msg)
-        def read(self,len):
+        def read(self,len=7):
                 self.conn.write("\xFF\x08\x07\x00\x00\x00\x00")
                 return self.conn.read(len)
         def debounce(self):
