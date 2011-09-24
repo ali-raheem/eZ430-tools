@@ -1,21 +1,35 @@
 #!/usr/bin/env python
-import "eZ430-tools/eZ430"
+import eZ430
 import time
+import urllib2
+
 #Wireless link init
 watch = eZ430.watch("/dev/tty.usbmodem001")
+
+#Variables
+current = 1
+baseurl = "http://localhost:8080/"
 
 def neutral():
 	print "Neutral"
 
 def left():
 	print "Left"
+	try:
+		urllib2.urlopen(baseurl + "moveleft")
+	except urllib2.URLError:
+		error()
 
 def right():
 	print "Right"
+	try:
+		urllib2.urlopen(baseurl + "moveright")
+	except urllib2.URLError:
+		error()
 
-current = 1
+def error():
+	print "Some error in opening url"
 
-#Variables
 #Gestures
 while 1:
 	time.sleep(1)
